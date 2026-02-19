@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mont Royale International College — Study in Malaysia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;font-weight:300;color:#1a1a1a;background:#fff;overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 4rem;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(192,21,42,0.12);box-shadow:0 2px 20px rgba(0,0,0,0.06);}
+.nav-logo-wrap{display:flex;align-items:center;gap:0.8rem;}
+.nav-logo-icon{width:38px;height:38px;background:#C0152A;display:grid;place-items:center;color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.1em;color:#C0152A;line-height:1.2;}
+.nav-logo small{display:block;font-size:0.6rem;letter-spacing:0.2em;color:#999;font-family:'DM Sans',sans-serif;font-weight:400;}
+.nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center;}
+.nav-links a{text-decoration:none;color:#555;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s;}
+.nav-links a:hover{color:#C0152A;}
+.nav-apply{background:#C0152A;color:#fff!important;padding:0.5rem 1.4rem;transition:background 0.3s!important;}
+.nav-apply:hover{background:#E8293F!important;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;padding-top:70px;}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:6rem 4rem 4rem 6rem;position:relative;z-index:2;}
+.hero-right{position:relative;overflow:hidden;}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center;}
+.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,#fff 0%,transparent 30%);}
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:#FFF0F2;border:1px solid rgba(192,21,42,0.2);color:#C0152A;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.4rem 0.9rem;border-radius:2px;margin-bottom:1.8rem;width:fit-content;}
+.hero-tag::before{content:'★';font-size:0.65rem;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4.8rem);font-weight:300;line-height:1.08;margin-bottom:1.2rem;color:#111;}
+.hero h1 em{font-style:italic;color:#C0152A;}
+.hero h1 strong{font-weight:600;}
+.hero-sub{font-size:1rem;color:#666;line-height:1.8;max-width:480px;margin-bottom:2.5rem;}
+.hero-stats{display:flex;gap:2.5rem;margin-bottom:2.8rem;}
+.stat-item{text-align:left;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:#C0152A;line-height:1;}
+.stat-label{font-size:0.72rem;color:#888;letter-spacing:0.1em;text-transform:uppercase;margin-top:0.2rem;}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-red{background:#C0152A;color:#fff;text-decoration:none;padding:0.9rem 2.2rem;font-size:0.82rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:500;transition:all 0.3s;border:2px solid #C0152A;display:inline-block;}
+.btn-red:hover{background:#E8293F;border-color:#E8293F;transform:translateY(-2px);box-shadow:0 8px 24px rgba(192,21,42,0.3);}
+.btn-white{background:transparent;color:#C0152A;text-decoration:none;padding:0.9rem 2.2rem;font-size:0.82rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:500;border:2px solid #C0152A;transition:all 0.3s;display:inline-block;}
+.btn-white:hover{background:#FFF0F2;transform:translateY(-2px);}
+.hero-badge{position:absolute;bottom:2rem;left:4rem;background:#fff;border:1px solid rgba(192,21,42,0.2);padding:1rem 1.4rem;display:flex;align-items:center;gap:1rem;box-shadow:0 4px 24px rgba(0,0,0,0.1);z-index:3;}
+.badge-icon{font-size:1.8rem;}
+.badge-text{font-size:0.78rem;color:#333;line-height:1.5;}
+.badge-text strong{display:block;color:#C0152A;font-size:1rem;font-weight:600;}
+
+/* ── SECTION BASE ── */
+section{padding:6rem 2rem;}
+.container{max-width:1100px;margin:0 auto;}
+.section-label{font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:#C0152A;margin-bottom:0.8rem;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:300;line-height:1.1;margin-bottom:1.2rem;color:#111;}
+.section-title em{font-style:italic;color:#C0152A;}
+.section-body{color:#666;font-size:0.95rem;line-height:1.9;max-width:580px;}
+
+/* ── WHY SECTION ── */
+.why-section{background:#FAFAFA;border-top:1px solid #eee;border-bottom:1px solid #eee;}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.why-image-wrap{position:relative;height:520px;}
+.why-image-main{width:100%;height:100%;object-fit:cover;}
+.why-image-overlay{position:absolute;bottom:-20px;right:-20px;width:55%;background:#C0152A;padding:1.8rem;color:#fff;}
+.why-overlay-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;margin-bottom:0.5rem;}
+.why-overlay-text{font-size:0.8rem;opacity:0.85;line-height:1.6;}
+.feature-list{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.2rem;}
+.feature-item{display:flex;align-items:flex-start;gap:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #eee;}
+.feature-item:last-child{border-bottom:none;}
+.feature-icon{width:40px;height:40px;background:#FFF0F2;border:1px solid rgba(192,21,42,0.15);display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;}
+.feature-title{font-weight:500;font-size:0.92rem;color:#111;margin-bottom:0.2rem;}
+.feature-desc{font-size:0.82rem;color:#888;line-height:1.6;}
+
+/* ── BENEFITS IMAGE STRIP ── */
+.benefits-hero{position:relative;height:440px;overflow:hidden;}
+.benefits-hero img{width:100%;height:100%;object-fit:cover;object-position:center 40%;}
+.benefits-hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(192,21,42,0.88) 0%,rgba(192,21,42,0.5) 60%,transparent 100%);}
+.benefits-content{position:absolute;inset:0;display:flex;align-items:center;padding:0 6rem;}
+.benefits-text-side{max-width:520px;color:#fff;}
+.benefits-text-side .section-label{color:rgba(255,255,255,0.7);}
+.benefits-text-side .section-title{color:#fff;}
+.benefits-text-side .section-title em{color:#FFD0D6;}
+.benefits-cards{display:grid;grid-template-columns:repeat(4,1fr);}
+.benefit-card{background:#fff;border:1px solid #eee;border-left:none;padding:2.2rem 1.8rem;text-align:center;transition:transform 0.3s,box-shadow 0.3s;}
+.benefit-card:first-child{border-left:1px solid #eee;}
+.benefit-card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(192,21,42,0.12);}
+.benefit-emoji{font-size:2rem;margin-bottom:0.8rem;}
+.benefit-title{font-weight:600;font-size:0.9rem;color:#111;margin-bottom:0.4rem;}
+.benefit-desc{font-size:0.8rem;color:#888;line-height:1.6;}
+.stipend-card{background:#C0152A;border-color:#C0152A;color:#fff;}
+.stipend-card .benefit-title{color:#fff;}
+.stipend-card .benefit-desc{color:rgba(255,255,255,0.8);}
+.stipend-amount{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:#FFD0D6;line-height:1;margin:0.3rem 0;}
+
+/* ── FLAGSHIP PROGRAM ── */
+.flagship-grid{display:grid;grid-template-columns:5fr 4fr;gap:4rem;align-items:start;}
+.flagship-images{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:260px 200px;gap:12px;}
+.flagship-img-main{grid-column:1/-1;object-fit:cover;width:100%;height:100%;}
+.flagship-img-small{object-fit:cover;width:100%;height:100%;}
+.flagship-badge{display:inline-block;background:#C0152A;color:#fff;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;padding:0.35rem 1rem;font-weight:500;margin-bottom:1.5rem;}
+.program-details{margin-top:2rem;display:flex;flex-direction:column;gap:0;}
+.detail-row{display:flex;gap:1rem;align-items:center;font-size:0.88rem;color:#555;padding:0.75rem 0;border-bottom:1px solid #f0f0f0;}
+.detail-row:last-child{border-bottom:none;}
+.detail-row .icon{font-size:1rem;flex-shrink:0;}
+.detail-row strong{color:#111;min-width:120px;display:inline-block;}
+
+/* ── PROGRAMS GRID ── */
+.programs-bg{background:linear-gradient(135deg,#1a0508 0%,#2d0a10 50%,#1a0508 100%);position:relative;overflow:hidden;}
+.programs-bg::before{content:'';position:absolute;inset:0;opacity:0.4;background-image:radial-gradient(circle at 1px 1px, rgba(192,21,42,0.3) 1px, transparent 0);background-size:40px 40px;}
+.programs-bg .section-label{color:rgba(255,255,255,0.5);}
+.programs-bg .section-title{color:#fff;}
+.programs-bg .section-title em{color:#FF8A98;}
+.programs-bg .section-body{color:rgba(255,255,255,0.6);}
+.programs-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3.5rem;}
+.programs-grid-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);}
+.program-card{background:#1a0508;padding:2rem 1.8rem;transition:background 0.3s,transform 0.3s;cursor:default;position:relative;overflow:hidden;border:1px solid rgba(192,21,42,0.15);}
+.program-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#C0152A;transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+.program-card:hover{background:#2d0a10;transform:translateY(-4px);}
+.program-card:hover::before{transform:scaleX(1);}
+.program-emoji{font-size:1.8rem;margin-bottom:1rem;}
+.program-num{font-size:0.68rem;letter-spacing:0.2em;color:rgba(192,21,42,0.6);margin-bottom:0.5rem;text-transform:uppercase;}
+.program-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:#fff;line-height:1.3;}
+.program-card.highlight{background:#C0152A;border-color:#C0152A;}
+.program-card.highlight:hover{background:#E8293F;}
+.program-card.highlight .program-num{color:rgba(255,255,255,0.6);}
+
+/* ── MALAYSIA IMAGE STRIP ── */
+.malaysia-strip{display:grid;grid-template-columns:repeat(3,1fr);height:320px;}
+.malaysia-strip-item{position:relative;overflow:hidden;}
+.malaysia-strip-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s;}
+.malaysia-strip-item:hover img{transform:scale(1.05);}
+.malaysia-strip-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);color:#fff;padding:1.5rem 1.2rem 1rem;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;}
+
+/* ── REQUIREMENTS ── */
+.req-section{background:#FAFAFA;}
+.req-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.req-image-wrap{position:relative;}
+.req-image-wrap img{width:100%;height:420px;object-fit:cover;}
+.req-image-badge{position:absolute;top:2rem;left:-1.5rem;background:#fff;border-left:4px solid #C0152A;padding:1.2rem 1.5rem;box-shadow:0 4px 20px rgba(0,0,0,0.12);}
+.req-badge-title{font-weight:600;color:#C0152A;font-size:0.85rem;}
+.req-badge-sub{font-size:0.78rem;color:#888;margin-top:0.2rem;}
+.req-list{margin-top:2rem;list-style:none;}
+.req-list li{display:flex;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid #eee;font-size:0.92rem;color:#333;}
+.req-list li .dot{width:8px;height:8px;background:#C0152A;border-radius:50%;flex-shrink:0;}
+.stipend-box{margin-top:2rem;background:#C0152A;color:#fff;padding:2rem 2.2rem;}
+.stipend-box-amount{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:#FFD0D6;line-height:1;}
+.stipend-box-label{font-size:0.78rem;opacity:0.8;letter-spacing:0.12em;margin-top:0.3rem;text-transform:uppercase;}
+.stipend-box-note{margin-top:1rem;font-size:0.82rem;opacity:0.9;line-height:1.6;border-top:1px solid rgba(255,255,255,0.2);padding-top:1rem;}
+
+/* ── GOOGLE FORM SECTION ── */
+.form-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start;}
+.contact-card{background:#FFF0F2;border:1px solid rgba(192,21,42,0.15);padding:2rem;margin-top:2rem;margin-bottom:1.5rem;}
+.contact-card-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:#111;margin-bottom:0.3rem;}
+.contact-card-title{font-size:0.78rem;color:#C0152A;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.2rem;}
+.contact-line{display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0;border-top:1px solid rgba(192,21,42,0.1);font-size:0.88rem;color:#555;}
+.contact-line a{color:#C0152A;text-decoration:none;font-weight:500;}
+.contact-line a:hover{text-decoration:underline;}
+.whatsapp-btn{display:flex;align-items:center;justify-content:center;gap:0.7rem;background:#25D366;color:#fff;text-decoration:none;padding:1rem 1.5rem;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;transition:background 0.3s;}
+.whatsapp-btn:hover{background:#20b558;}
+.form-embed-wrap{background:#F8F8F8;border:1px solid #eee;padding:2.5rem;}
+.form-embed-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#111;margin-bottom:0.5rem;}
+.form-embed-sub{font-size:0.85rem;color:#888;margin-bottom:1.5rem;line-height:1.6;}
+.google-form-iframe{width:100%;border:none;min-height:650px;}
+.form-placeholder{background:#fff;border:2px dashed rgba(192,21,42,0.3);padding:2.5rem 2rem;text-align:center;}
+.form-placeholder-icon{font-size:3rem;margin-bottom:1rem;}
+.form-placeholder-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#C0152A;margin-bottom:0.8rem;}
+.form-steps{text-align:left;margin:1.5rem auto;max-width:380px;list-style:none;}
+.form-steps li{font-size:0.85rem;color:#555;padding:0.5rem 0;display:flex;gap:0.8rem;align-items:flex-start;border-bottom:1px solid #f0f0f0;}
+.form-steps li:last-child{border-bottom:none;}
+.step-num{background:#C0152A;color:#fff;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:0.7rem;flex-shrink:0;font-weight:600;margin-top:1px;}
+.paste-input{width:100%;border:1px solid rgba(192,21,42,0.3);padding:0.85rem;font-size:0.85rem;font-family:'DM Sans',sans-serif;outline:none;margin-top:1.2rem;color:#333;background:#fff;}
+.paste-input:focus{border-color:#C0152A;}
+.paste-btn{background:#C0152A;color:#fff;border:none;padding:0.85rem 1.8rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;cursor:pointer;margin-top:0.8rem;width:100%;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;transition:background 0.3s;}
+.paste-btn:hover{background:#E8293F;}
+
+/* ── FOOTER ── */
+footer{background:#1a0508;color:#fff;padding:4rem 2rem 2rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;max-width:1100px;margin:0 auto 3rem;}
+.footer-logo{font-family:'Cormorant Garamond',serif;color:#FF8A98;font-size:1.2rem;letter-spacing:0.1em;}
+.footer-brand p{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.8;margin-top:0.8rem;max-width:280px;}
+.footer-col h4{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.2rem;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:0.6rem;}
+.footer-col a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;transition:color 0.3s;}
+.footer-col a:hover{color:#FF8A98;}
+.footer-bottom{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
+.footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,0.35);}
+
+/* ── FLOATING WHATSAPP ── */
+.float-wa{position:fixed;bottom:2rem;right:2rem;z-index:999;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.5);animation:pulse-wa 2.5s infinite;}
+.float-wa:hover{transform:scale(1.1);}
+@keyframes pulse-wa{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.5);}50%{box-shadow:0 6px 36px rgba(37,211,102,0.75);}}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .hero{grid-template-columns:1fr;}
+  .hero-left{padding:5rem 1.5rem 3rem;}
+  .hero-right{height:300px;}
+  .hero-right::after{background:linear-gradient(to bottom,#fff 0%,transparent 30%);}
+  .why-grid,.flagship-grid,.req-grid,.form-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .programs-grid-wrap{grid-template-columns:repeat(2,1fr);}
+  .benefits-cards{grid-template-columns:repeat(2,1fr);}
+  .malaysia-strip{grid-template-columns:1fr;}
+  .malaysia-strip-item{height:220px;}
+  .programs-header{grid-template-columns:1fr;}
+  .why-image-wrap{height:300px;}
+  .why-image-overlay{right:0;bottom:0;}
+  .footer-grid{grid-template-columns:1fr;}
+  .benefits-content{padding:0 2rem;}
+  .hero-left{padding:5rem 1.5rem 2rem;}
+  .hero-badge{left:1.5rem;bottom:1rem;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a class="float-wa" href="https://wa.me/60125906439" target="_blank" title="WhatsApp Dr. Kumar">💬</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo-wrap">
+    <div class="nav-logo-icon">M</div>
+    <div class="nav-logo">Mont Royale International College<small>Malaysia · Excellence in Education</small></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#why">Why Malaysia</a></li>
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#apply" class="nav-apply">Apply Now</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Malaysia's Premier Work-Based Diploma</div>
+    <h1>Your Career<br/>Starts in a<br/><em>5-Star Hotel</em></h1>
+    <p class="hero-sub">Study, work, and earn inside a real luxury hotel. Free accommodation, meals & transport — plus <strong>RM 1,500/month stipend.</strong></p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">RM1,500</div>
+        <div class="stat-label">Monthly Stipend</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">8+</div>
+        <div class="stat-label">Diploma Programs</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Work-Based</div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#apply" class="btn-red">Apply Now — Free</a>
+      <a href="#programs" class="btn-white">View All Programs</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80&fit=crop" alt="Luxury 5-star hotel lobby"/>
+  </div>
+  <div class="hero-badge">
+    <div class="badge-icon">🏨</div>
+    <div class="badge-text">
+      <strong>5-Star Hotel Environment</strong>
+      Real training. Real guests. Real experience.
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY MALAYSIA ══ -->
+<section class="why-section" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-image-wrap reveal">
+        <img class="why-image-main" src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=700&q=80&fit=crop" alt="Kuala Lumpur skyline"/>
+        <div class="why-image-overlay">
+          <div class="why-overlay-title">Malaysia — Heart of Asia</div>
+          <div class="why-overlay-text">A multicultural country ranked among Asia's top education destinations — safe, affordable, and globally connected.</div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:0.15s">
+        <p class="section-label">Why Choose Malaysia</p>
+        <h2 class="section-title">A World-Class Education<br/><em>Experience</em></h2>
+        <p class="section-body">Malaysia is Southeast Asia's fastest-growing education hub — offering international quality at an affordable cost, with a warm culture for international students.</p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon">🌏</div>
+            <div>
+              <div class="feature-title">International Recognition</div>
+              <div class="feature-desc">Mont Royale diplomas are internationally recognised — a global launchpad for your career.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🏨</div>
+            <div>
+              <div class="feature-title">Real 5-Star Hotel Training</div>
+              <div class="feature-desc">You train inside an operating luxury hotel — serving real guests from day one, not in simulation labs.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">💰</div>
+            <div>
+              <div class="feature-title">Earn While You Learn</div>
+              <div class="feature-desc">RM 1,500/month stipend + overtime. Graduate with savings AND a diploma in your hands.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🤝</div>
+            <div>
+              <div class="feature-title">Strong Industry Connections</div>
+              <div class="feature-desc">Corporate partnerships open direct employment pathways in hospitality, aviation, tech and more.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BENEFITS IMAGE STRIP ══ -->
+<div class="benefits-hero" id="benefits">
+  <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1600&q=80&fit=crop" alt="Luxury hotel hospitality"/>
+  <div class="benefits-hero-overlay"></div>
+  <div class="benefits-content">
+    <div class="benefits-text-side">
+      <p class="section-label">Student Support Package</p>
+      <h2 class="section-title" style="font-size:clamp(1.8rem,4vw,3rem);">Everything <em>Included</em></h2>
+      <p style="color:rgba(255,255,255,0.8);font-size:0.95rem;line-height:1.8;max-width:440px;">Our Hospitality Diploma students receive a fully-supported package — focus on your future, not your expenses.</p>
+    </div>
+  </div>
+</div>
+<div class="benefits-cards">
+  <div class="benefit-card reveal">
+    <div class="benefit-emoji">🏠</div>
+    <div class="benefit-title">Free Accommodation</div>
+    <div class="benefit-desc">Safe, comfortable housing near your training hotel — provided throughout your program.</div>
+  </div>
+  <div class="benefit-card reveal" style="transition-delay:0.1s">
+    <div class="benefit-emoji">🚌</div>
+    <div class="benefit-title">Free Transportation</div>
+    <div class="benefit-desc">Daily shuttle to and from your training hotel. Zero travel costs.</div>
+  </div>
+  <div class="benefit-card reveal" style="transition-delay:0.2s">
+    <div class="benefit-emoji">🍽️</div>
+    <div class="benefit-title">Free Daily Meals</div>
+    <div class="benefit-desc">Breakfast, lunch & dinner on working days. Eat well, perform well.</div>
+  </div>
+  <div class="benefit-card stipend-card reveal" style="transition-delay:0.3s">
+    <div class="benefit-emoji">💵</div>
+    <div class="stipend-amount">RM 1,500</div>
+    <div class="benefit-title">Monthly Stipend</div>
+    <div class="benefit-desc">Plus overtime pay. Graduate with money saved.</div>
+  </div>
+</div>
+
+<!-- ══ FLAGSHIP PROGRAM ══ -->
+<section id="flagship">
+  <div class="container">
+    <div class="flagship-grid">
+      <div class="reveal">
+        <div class="flagship-images">
+          <img class="flagship-img-main" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=900&q=80&fit=crop" alt="Hotel hospitality service"/>
+          <img class="flagship-img-small" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80&fit=crop" alt="Luxury hotel room"/>
+          <img class="flagship-img-small" src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=400&q=80&fit=crop" alt="Hotel fine dining"/>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:0.2s">
+        <span class="flagship-badge">★ Flagship — Work Based Learning</span>
+        <p class="section-label">Featured Program</p>
+        <h2 class="section-title">Diploma in Hotel &<br/><em>Hospitality Management</em></h2>
+        <p class="section-body">The only hybrid program in Malaysia where you earn while earning your diploma — fully immersed in a real 5-star hotel.</p>
+        <div class="program-details">
+          <div class="detail-row"><span class="icon">📍</span><strong>Location</strong> Malaysia — 5-Star Hotel Campus</div>
+          <div class="detail-row"><span class="icon">📅</span><strong>Duration</strong> 2.5 – 3 Years Diploma</div>
+          <div class="detail-row"><span class="icon">🌐</span><strong>Mode</strong> Hybrid — Classroom + Live Hotel</div>
+          <div class="detail-row"><span class="icon">🎓</span><strong>Requirement</strong> Higher Secondary Graduate, Age 18–26</div>
+          <div class="detail-row"><span class="icon">💬</span><strong>Language</strong> Good English Required</div>
+          <div class="detail-row"><span class="icon">💰</span><strong>Stipend</strong> RM 1,500/month + Overtime</div>
+          <div class="detail-row"><span class="icon">🏠</span><strong>Includes</strong> Accommodation, Meals, Transport</div>
+        </div>
+        <a href="#apply" class="btn-red" style="margin-top:2rem;display:inline-block;">Apply for This Program</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MALAYSIA STRIP ══ -->
+<div class="malaysia-strip">
+  <div class="malaysia-strip-item">
+    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80&fit=crop" alt="Kuala Lumpur"/>
+    <div class="malaysia-strip-caption">🌆 Kuala Lumpur City Life</div>
+  </div>
+  <div class="malaysia-strip-item">
+    <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&q=80&fit=crop" alt="Luxury hotel pool"/>
+    <div class="malaysia-strip-caption">🏊 5-Star Hotel Facilities</div>
+  </div>
+  <div class="malaysia-strip-item">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80&fit=crop" alt="Students working"/>
+    <div class="malaysia-strip-caption">🎓 International Student Life</div>
+  </div>
+</div>
+
+<!-- ══ ALL PROGRAMS ══ -->
+<section class="programs-bg" id="programs">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="programs-header">
+      <div class="reveal">
+        <p class="section-label">All Diploma Programs</p>
+        <h2 class="section-title">Choose Your<br/><em>Path Forward</em></h2>
+      </div>
+      <div class="reveal" style="transition-delay:0.15s">
+        <p class="section-body">From hospitality to tech, law to aviation — internationally recognised diplomas across high-demand industries.</p>
+      </div>
+    </div>
+    <div class="programs-grid-wrap reveal">
+      <div class="program-card highlight">
+        <div class="program-emoji">🏨</div>
+        <div class="program-num">Flagship · Work-Based</div>
+        <div class="program-name">Hotel & Hospitality Management</div>
+      </div>
+      <div class="program-card">
+        <div class="program-emoji">💼</div>
+        <div class="program-num">D — 01</div>
+        <div class="program-name">Business Management</div>
+      </div>
+      <div class="program-card">
+        <div class="program-emoji">⚙️</div>
+        <div class="program-num">D — 02</div>
+        <div class="program-name">Technology Management</div>
+      </div>
+      <div class="program-card">
+        <div class="program-emoji">📊</div>
+        <div class="program-num">D — 03</div>
+        <div class="program-name">Accounting</div>
+      </div>
+      <div class="program-card">
+        <div class="program-emoji">🎨</div>
+        <div class="program-num">D — 04</div>
+        <div class="program-name">Multimedia Design</div>
+      </div>
+      <div class="program-card">
+        <div class="program-emoji">💻</div>
+        <div class="program-num">D — 05</div>
+        <div class="program-name">Computer Science</div>
+      </div>
+      <div class="program-card">
+        <div class="program-emoji">🛡️</div>
+        <div class="program-num">D — 06</div>
+        <div class="program-name">Law Enforcement</div>
+      </div>
+      <div class="program-card">
+        <div class="program-emoji">✈️</div>
+        <div class="program-num">D — 07</div>
+        <div class="program-name">Airlines & Cabin Crew Management</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REQUIREMENTS ══ -->
+<section class="req-section" id="requirements">
+  <div class="container">
+    <div class="req-grid">
+      <div class="reveal">
+        <p class="section-label">Eligibility</p>
+        <h2 class="section-title">Who Can <em>Apply?</em></h2>
+        <p class="section-body">We welcome driven students from across the world — ready to transform their lives through world-class, work-based education.</p>
+        <ul class="req-list">
+          <li><div class="dot"></div>Higher Secondary Graduate (SPM / O-Level / A-Level or equivalent)</li>
+          <li><div class="dot"></div>Age 18 to 26 years old</li>
+          <li><div class="dot"></div>Good command of English (spoken & written)</li>
+          <li><div class="dot"></div>Well-groomed and professional appearance</li>
+          <li><div class="dot"></div>All nationalities are welcome to apply</li>
+        </ul>
+        <div class="stipend-box">
+          <div style="font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;opacity:0.7;margin-bottom:0.8rem;">Monthly Earning</div>
+          <div class="stipend-box-amount">RM 1,500</div>
+          <div class="stipend-box-label">Base stipend per month</div>
+          <div class="stipend-box-note">+ Overtime pay for additional shifts<br/>+ Free accommodation, transport & meals included</div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:0.2s">
+        <div class="req-image-wrap">
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=700&q=80&fit=crop" alt="Luxury hotel Malaysia"/>
+          <div class="req-image-badge">
+            <div class="req-badge-title">Open to All Nationalities</div>
+            <div class="req-badge-sub">International students warmly welcome</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ APPLY / GOOGLE FORM ══ -->
+<section id="apply" style="background:#fff;">
+  <div class="container">
+    <div class="form-grid">
+      <div>
+        <p class="section-label reveal">Get In Touch & Apply</p>
+        <h2 class="section-title reveal">Talk to <em>Dr. Kumar</em><br/>Today</h2>
+        <p class="section-body reveal">Ready to apply? Fill the form or reach out directly. We respond within 24 hours.</p>
+
+        <div class="contact-card reveal">
+          <div class="contact-card-name">Dr. Kumarashwaran</div>
+          <div class="contact-card-title">Director — Corporate Partnership &amp; Social Impact</div>
+          <div class="contact-line">🏫 &nbsp;Mont Royale International College, Malaysia</div>
+          <div class="contact-line">📱 &nbsp;<a href="tel:+60125906439">+60 12-590 6439</a></div>
+          <div class="contact-line">💬 &nbsp;<a href="https://wa.me/60125906439" target="_blank">WhatsApp Us Directly</a></div>
+        </div>
+        <a class="whatsapp-btn reveal" href="https://wa.me/60125906439?text=Hi%20Dr.%20Kumar%2C%20I%20am%20interested%20in%20studying%20at%20Mont%20Royale%20International%20College%20Malaysia." target="_blank">
+          💬 &nbsp;Chat on WhatsApp Now
+        </a>
+      </div>
+
+      <!-- GOOGLE FORM EMBED -->
+      <div class="reveal" style="transition-delay:0.2s">
+        <div class="form-embed-wrap">
+          <div class="form-embed-title">Online Application Form</div>
+          <div class="form-embed-sub">Fill in the details below and our admissions team will contact you within 24 hours.</div>
+
+          <div id="form-container">
+            <!-- DEFAULT SHOWN: Paste-your-form widget -->
+            <div class="form-placeholder" id="form-placeholder">
+              <div class="form-placeholder-icon">📋</div>
+              <div class="form-placeholder-title">Connect Your Google Form</div>
+              <p style="font-size:0.84rem;color:#888;margin-bottom:0.3rem;">3 quick steps to embed your form:</p>
+              <ol class="form-steps">
+                <li><span class="step-num">1</span><span>Go to <strong>forms.google.com</strong> → Create new form: "Mont Royale International Application"</span></li>
+                <li><span class="step-num">2</span><span>Add fields: Name, Email, Phone, Country, Program of Interest, Message</span></li>
+                <li><span class="step-num">3</span><span>Click <strong>Send → Embed (&lt;/&gt;) → Copy the src URL</strong> → paste below</span></li>
+              </ol>
+              <input type="text" id="form-url-input" class="paste-input" placeholder="Paste your Google Form embed URL here…"/>
+              <button class="paste-btn" onclick="loadGoogleForm()">✓ &nbsp;Load My Google Form</button>
+              <p style="font-size:0.75rem;color:#bbb;margin-top:0.8rem;">Your form URL will be saved automatically for next time.</p>
+            </div>
+            <!-- IFRAME shown after form URL is set -->
+            <iframe id="google-form-iframe" class="google-form-iframe" style="display:none;" src="" frameborder="0" marginheight="0" marginwidth="0">Loading form…</iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Mont Royale International College</div>
+      <p>Empowering international students with world-class diploma education and real industry experience in the heart of Malaysia.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="#flagship">Hotel &amp; Hospitality ★</a></li>
+        <li><a href="#programs">Business Management</a></li>
+        <li><a href="#programs">Technology Management</a></li>
+        <li><a href="#programs">Airlines &amp; Cabin Crew</a></li>
+        <li><a href="#programs">Computer Science</a></li>
+        <li><a href="#programs">All Programs →</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+60125906439">+60 12-590 6439</a></li>
+        <li><a href="https://wa.me/60125906439" target="_blank">WhatsApp Us</a></li>
+        <li><a href="#apply">Apply Online</a></li>
+        <li><a href="#why">Why Malaysia</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Mont Royale International College Malaysia. All rights reserved.</p>
+    <p>Dr. Kumarashwaran · Director, Corporate Partnership &amp; Social Impact</p>
+  </div>
+</footer>
+
+<script>
+// ── Scroll Reveal ──
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
+
+// ── Google Form Loader ──
+function loadGoogleForm() {
+  const url = document.getElementById('form-url-input').value.trim();
+  if(!url){ alert('Please paste your Google Form embed URL first.'); return; }
+  let embedUrl = url;
+  // Auto-add embedded=true if missing
+  if(!url.includes('embedded=true')){
+    embedUrl = url + (url.includes('?') ? '&' : '?') + 'embedded=true';
+  }
+  const iframe = document.getElementById('google-form-iframe');
+  iframe.src = embedUrl;
+  iframe.style.display = 'block';
+  document.getElementById('form-placeholder').style.display = 'none';
+  try { localStorage.setItem('mric_google_form_url', embedUrl); } catch(e){}
+}
+
+// Auto-restore saved form URL
+try {
+  const saved = localStorage.getItem('mric_google_form_url');
+  if(saved){
+    document.getElementById('form-url-input').value = saved;
+    loadGoogleForm();
+  }
+} catch(e){}
+</script>
+</body>
+</html>
